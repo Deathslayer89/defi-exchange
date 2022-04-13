@@ -67,7 +67,7 @@ contract Exchange is ERC20 {
         uint256 denominator = (inputReserve * 100) + inputAmountWithFee;
         return numerator / denominator;
     }
-    function ethToCryptoDevTOken(uint _mintTokens)public payable{
+    function ethToCryptoDevToken(uint _mintTokens)public payable{
         uint tokenReserve=getReserve();
         uint tokensBought=getAmountOfTokens(msg.value, address(this).balance-msg.value, tokenReserve);
         require(tokensBought>=_mintTokens, "Not enough tokens");
